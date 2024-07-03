@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+      all
+{% endblock title %}
+    
+{% block content %}
+      <ul>
+        {% for produit in produits %}
+       <strong>{{forloop.counter }}</strong>
+       <li><a href="{{produit.get_absolute_url_for_detail }}">voir</a></li>
+       <li><a href="{{ produit.get_absolute_url_for_delete }}">Sppression</a></li>
+            <li>{{produit.nom }}</li>
+            <li>{{produit.description }}</li>
+            <li>{{produit.prix }}</li>
+       {% endfor %}
+      </ul> 
+       
+        
+{% endblock content %}

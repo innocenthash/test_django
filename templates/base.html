@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    {% block title %}
+        
+    {% endblock title %}
+
+
+    
+        </title>
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        
+        {% block css %}
+          
+        {% endblock css %}
+          
+</head>
+<body>
+      <h2>{{request.user}}</h2>
+      <header>
+        <nav>
+            <ul>
+              <li><a href="{% url 'compte:register' %}">Registration</a></li>
+              <li><a href="{% url 'compte:connecter' %}">connexion</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="{% url 'page:details' %}">Detail</a></li>
+                <li><a href="{% url 'page:all' %}">All</a></li>
+                <li><a href="create_produit">Créer un produit</a></li>
+            </ul>
+        </nav>
+      </header>
+      
+   
+        {% comment %} {% if messages %}
+            
+            {% for messages in message %}
+                 <p class="alert alert-{{message.tags}}">{{message}}</p>
+            {% endfor %}
+             
+        {% endif %}
+          {% endcomment %}
+         
+    
+      <main>
+        {% block content %}
+           
+        {% endblock content %}
+      </main>
+      
+      <footer>
+        
+      </footer>
+   <script src="{% static 'js/index.js' %}"></script>     
+</body>
+</html>

@@ -1,0 +1,10 @@
+
+{% for cours in object_list %}
+     <ul>
+        <li>{{cours.nom }}</li>
+        <li><a href="{%url 'cours_update' cours.id %}">Update</a></li>
+        <li><a href="{%url 'cours_delete' cours.id %}">Delete</a></li>
+        <li><a href="{%url 'detail_cours' cours.id %}">Voir</a></li>
+     </ul>
+{% endfor %}
+    

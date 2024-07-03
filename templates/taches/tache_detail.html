@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+       detail de chaque tache
+{% endblock title %}
+    {% load static %}
+{% block content %}
+       <ul>
+        
+        
+       
+        <li>{{tache.id }}</li>
+        
+        <li>{{tache.nom }}</li>
+        <li>{{tache.description }}</li>
+        <li>{{tache.date_creation }}</li>
+        <li>{{tache.fait }}</li>
+        
+        
+            
+            
+       
+       </ul>
+{% endblock content %}
+    

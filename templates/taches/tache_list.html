@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+       Liste de tache
+{% endblock title %}
+    {% load static %}
+{% block content %}
+       <ul>
+        
+        
+        {% if taches.len != 0 %}
+        {% for tache in taches %}
+        <li>{{tache.id }}</li>
+        <li ><a href="{{tache.get_absolute_url_for_detail}}">Voir</a></li>
+        <li>update</li>
+        <li ><a href="{{tache.get_absolute_url_for_delete}}">Delete</a></li>
+        <li>{{tache.nom }}</li>
+        <li>{{tache.description }}</li>
+        <li>{{tache.date_creation }}</li>
+        <li>{{tache.fait }}</li>
+        
+        {% endfor %}
+        {% else %}
+        <p>vide</p>
+        {% endif %}
+            
+            
+       
+       </ul>
+{% endblock content %}
+    

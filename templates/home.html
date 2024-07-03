@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+       Home
+{% endblock title %}
+    
+{% block content %}
+
+
+{% if request.user.is_authenticated %}
+         <h1>{{request.user.email }}</h1>
+{% else %}
+         <h1>Hello guest</h1>
+{% endif %}
+
+
+{% if liste %}
+<ul>
+         {% for item in liste %}
+                 
+                     <li>{{forloop.counter }} - {{item}}</li>
+              
+         {% endfor %}
+       </ul>           
+{% endif %}
+       
+       
+       <h1>Page d'accueil {{ user }} </h1>
+{% endblock content %}
+    

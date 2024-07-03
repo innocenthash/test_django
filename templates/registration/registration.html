@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+       Registration
+{% endblock title %}
+    {% load static %}
+{% block content %}
+
+<div class="alert"> 
+   {% if messages %}
+       {% for message in messages %}
+            <p class="alert alert-{{ message.tags }}">{{ message }}</p>
+       {% endfor %}
+   {% endif %}
+</div>
+
+       <h1>Page d'inscription</h1>
+       <form action="." method="post">
+        {% csrf_token %}
+        <label for="">username</label>
+        <input type="text" name="username"> <br>
+        <label for="">email</label>
+        <input type="email" name="email"><br>
+        <label for="">first_name</label>
+        <input type="text" name="first_name"><br>
+        <label for="">last_name</label>
+        <input type="text" name="last_name"><br>
+        <label for="">password</label>
+        <input type="password" name="password"><br>
+        <label for="">passwordconfirm</label>
+        <input type="password" name="passwordconfirm"><br>
+        <button type="submit">Register</button>
+       </form>
+{% endblock content %}
+    
